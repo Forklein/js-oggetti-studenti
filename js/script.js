@@ -64,7 +64,6 @@ objectDisplay.innerHTML = currentElement;
 
 
 buttonDisplay.addEventListener('click', function () {
-    var anotherDisplay = document.getElementById('another-student');
     do {
         var nameStudent = prompt('Inserisci il nome dello studente');
         var surnameStudent = prompt('Inserisci il cognome dello studente');
@@ -78,14 +77,12 @@ buttonDisplay.addEventListener('click', function () {
     }
 
     studentClass.push(newObject);
-    var appearObject = newObject.name + ' ' + newObject.surname;
-    var newElement = anotherDisplay.createElement('li');
-    newElement.appendChild(appearObject);
 
-    /* var node = document.createElement("li");
+    var appearObject = newObject.name + ' ' + newObject.surname;
+    var node = document.createElement("li");
+    objectDisplay.appendChild(node);
     var textnode = document.createTextNode(appearObject);
     node.appendChild(textnode);
-    anotherDisplay.appendChild(node);
-    */
+
     console.log(studentClass);
 })
