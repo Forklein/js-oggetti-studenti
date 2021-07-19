@@ -64,14 +64,28 @@ objectDisplay.innerHTML = currentElement;
 
 
 buttonDisplay.addEventListener('click', function () {
-    var nameStudent = prompt('Inserisci il nome dello studente');
-    var surnameStudent = prompt('Inserisci il cognome dello studente');
-    var ageStudent = parseInt(prompt('Inserisci l\'età dello studente'));
+    var anotherDisplay = document.getElementById('another-student');
+    do {
+        var nameStudent = prompt('Inserisci il nome dello studente');
+        var surnameStudent = prompt('Inserisci il cognome dello studente');
+        var ageStudent = parseInt(prompt('Inserisci l\'età dello studente'));
+    } while (!nameStudent || !surnameStudent || !ageStudent);
+
     var newObject = {
         name: nameStudent,
         surname: surnameStudent,
         age: ageStudent,
     }
+
     studentClass.push(newObject);
-    objectDisplay.innerHTML = '<li>' + newObject + '</li>'
+    var appearObject = newObject.name + ' ' + newObject.surname;
+    var newElement = anotherDisplay.createElement('li');
+    newElement.appendChild(appearObject);
+
+    /* var node = document.createElement("li");
+    var textnode = document.createTextNode(appearObject);
+    node.appendChild(textnode);
+    anotherDisplay.appendChild(node);
+    */
+    console.log(studentClass);
 })
