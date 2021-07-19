@@ -3,3 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container{
+    max-width: 1200px;
+    background-color: blueviolet;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
