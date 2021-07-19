@@ -31,6 +31,7 @@ Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere
 un nuovo oggetto studente inserendo nell’ordine: nome, cognome e età. */
 
 var objectDisplay = document.getElementById('object-student');
+var buttonDisplay = document.getElementById('add');
 var currentElement = '';
 
 var studentClass = [
@@ -59,5 +60,18 @@ var studentClass = [
 for (var i = 0; i < studentClass.length; i++) {
     currentElement += '<li>' + studentClass[i].name + ' ' + studentClass[i].surname + '</li>';
 }
-
 objectDisplay.innerHTML = currentElement;
+
+
+buttonDisplay.addEventListener('click', function () {
+    var nameStudent = prompt('Inserisci il nome dello studente');
+    var surnameStudent = prompt('Inserisci il cognome dello studente');
+    var ageStudent = parseInt(prompt('Inserisci l\'età dello studente'));
+    var newObject = {
+        name: nameStudent,
+        surname: surnameStudent,
+        age: ageStudent,
+    }
+    studentClass.push(newObject);
+    objectDisplay.innerHTML = '<li>' + newObject + '</li>'
+})
