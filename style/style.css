@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: brown;
+}
+
 .container{
     max-width: 1200px;
     background-color: blueviolet;
@@ -13,4 +17,8 @@
 
 ul {
     list-style-type: none;
+}
+
+button{
+    margin-top: 30px;
 }
